@@ -13,7 +13,7 @@ public class Extraction {
 	
 	@Override
 	public String toString() {
-		return "InputExtraction [rowHash="+this.extraction+"]"; 
+		return "Extraction [text="+this.extraction+"]"; 
 	}
 
 }

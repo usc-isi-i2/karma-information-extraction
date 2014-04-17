@@ -1,29 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/java"/>
-	<classpathentry including="**/*.java" kind="src" path="src/main/java"/>
-	<classpathentry excluding="**/*.java" kind="src" path="src/main/resources"/>
-	<classpathentry kind="var" path="M2_REPO/javax/ws/rs/javax.ws.rs-api/2.0/javax.ws.rs-api-2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/containers/jersey-container-grizzly2-http/2.6/jersey-container-grizzly2-http-2.6.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/external/javax.inject/2.2.0/javax.inject-2.2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/grizzly/grizzly-http-server/2.3.8/grizzly-http-server-2.3.8.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/grizzly/grizzly-http/2.3.8/grizzly-http-2.3.8.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/grizzly/grizzly-framework/2.3.8/grizzly-framework-2.3.8.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-common/2.6/jersey-common-2.6.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.6/jersey-guava-2.6.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-api/2.2.0/hk2-api-2.2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-utils/2.2.0/hk2-utils-2.2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/external/aopalliance-repackaged/2.2.0/aopalliance-repackaged-2.2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/hk2-locator/2.2.0/hk2-locator-2.2.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-server/2.6/jersey-server-2.6.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/glassfish/jersey/core/jersey-client/2.6/jersey-client-2.6.jar"/>
-	<classpathentry kind="var" path="M2_REPO/junit/junit/4.9/junit-4.9.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
-	<classpathentry kind="lib" path="H:/Trojan/DR/opennlp-tools-1.5.0-bin/opennlp-tools-1.5.0/opennlp-tools-1.5.0.jar"/>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/opennlp-tools-1.5.0.jar"/>
+	<classpathentry kind="lib" path="jars/stanford-ner-2014-01-04-javadoc.jar"/>
+	<classpathentry kind="lib" path="jars/stanford-ner-2014-01-04-sources.jar"/>
+	<classpathentry kind="lib" path="jars/stanford-ner-2014-01-04.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

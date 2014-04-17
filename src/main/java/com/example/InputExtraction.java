@@ -1,10 +1,10 @@
 package com.example;
 
 public class InputExtraction {
-	String rowHash, text;
+	String rowId, text;
 	
-	public void setRowHash(String hash) {
-		this.rowHash = hash;
+	public void setRowId(String id) {
+		this.rowId = id;
 	}
 	
 	public void setText(String text) {
@@ -15,13 +15,13 @@ public class InputExtraction {
 		return this.text;
 	}
 	
-	public String getRowHash() {
-		return this.rowHash;
+	public String getRowId() {
+		return this.rowId;
 	}
 	
 	@Override
 	public String toString() {
-		return "InputExtraction [rowHash="+this.rowHash+", text="+this.text+"]"; 
+		return "InputExtraction [rowId="+this.rowId+", text="+this.text+"]"; 
 	}
 
 }

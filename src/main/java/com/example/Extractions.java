@@ -31,9 +31,5 @@ public class Extractions {
 		return this.dates;
 	}
 
-/*	@Override
-	public String toString() {
-		return "Extractions [rowHash="+", text="+"]"; 
-	}
-*/
+
 }

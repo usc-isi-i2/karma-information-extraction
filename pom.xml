@@ -36,6 +36,14 @@
 			<artifactId>tools</artifactId>
 			<version>1.5.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.3.1</version>
+		</dependency>
+		
+		
 <!-- 
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
@@ -84,6 +92,18 @@
 					<mainClass>com.example.Main</mainClass>
 				</configuration>
 			</plugin>
+			<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-jar-plugin</artifactId>
+  <version>2.4</version>
+  <configuration>
+	<archive>
+		<manifest>
+			<mainClass>com.example.Main</mainClass>
+		</manifest>
+	</archive>
+  </configuration>
+ </plugin>
 		</plugins>
 	</build>
 
