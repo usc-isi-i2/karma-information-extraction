@@ -31,9 +31,9 @@ public class StanfordNLPExtraction {
 			OutputExtraction outputExt = new OutputExtraction();
 			Extractions e = new Extractions();
 
-			Set<String> people = new HashSet<String>();
-			Set<String> places = new HashSet<String>();
-			Set<String> dates = new HashSet<String>();
+			Set<Extraction> people = new HashSet<Extraction>();
+			Set<Extraction> places = new HashSet<Extraction>();
+			Set<Extraction> dates = new HashSet<Extraction>();
 			
 			String stanMarkedOutput = classifier.classifyWithInlineXML(paragraph.getText());
 			System.out.println(stanMarkedOutput);
@@ -43,8 +43,10 @@ public class StanfordNLPExtraction {
 			Matcher m = p.matcher(stanMarkedOutput);
 			
 			while(m.find()) {
-				String person = m.group(1);				
-				people.add(person);
+				String person = m.group(1);
+				Extraction e1 = new Extraction();
+				e1.setExtraction(person);
+				people.add(e1);
 			}
 			
 			String locationRegEx = "<LOCATION>(.+?)</LOCATION>";
@@ -52,8 +54,10 @@ public class StanfordNLPExtraction {
 			m = p.matcher(stanMarkedOutput);
 			
 			while(m.find()) {
-				String location = m.group(1);				
-				places.add(location);
+				String location = m.group(1);	
+				Extraction e1 = new Extraction();
+				e1.setExtraction(location);
+				places.add(e1);
 			}
 			
 			String dateRegEx = "<DATE>(.+?)</DATE>";
@@ -62,13 +66,15 @@ public class StanfordNLPExtraction {
 			
 			while(m.find()) {
 				String date = m.group(1);
-				dates.add(date);
+				Extraction e1 = new Extraction();
+				e1.setExtraction(date);
+				dates.add(e1);
 			}
 			
 			
-			e.setPeople(new ArrayList<String>(people));
-			e.setPlaces(new ArrayList<String>(places));
-			e.setDates(new ArrayList<String>(dates));
+			e.setPeople(new ArrayList<Extraction>(people));
+			e.setPlaces(new ArrayList<Extraction>(places));
+			e.setDates(new ArrayList<Extraction>(dates));
 
 			outputExt.setRowId(paragraph.getRowId());
 			outputExt.setExtractions(e);

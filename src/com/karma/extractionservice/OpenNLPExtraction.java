@@ -85,11 +85,11 @@ public class OpenNLPExtraction {
 		return output;
 	}
 
-	public List<String> findPeople(InputExtraction paragraph) {
+	public List<Extraction> findPeople(InputExtraction paragraph) {
 		System.out.println("Service called");
 		System.out.println(paragraph.getText()+" "+paragraph.getRowId());
 		Span names[] = null;
-		Set<String> people = new HashSet<String>();
+		Set<Extraction> people = new HashSet<Extraction>();
 
 			String[] st = paragraph.text.split("\\s");
 			names = nameDetector.find(st);
@@ -99,15 +99,17 @@ public class OpenNLPExtraction {
 			String[] namesStr = Span.spansToStrings(names, st);
 			
 			for (String str : namesStr) {
-				people.add(str);
+				Extraction e = new Extraction();
+				e.setExtraction(str);
+				people.add(e);
 			}
 			
-		return new ArrayList<String>(people);
+		return new ArrayList<Extraction>(people);
 	}
 	
-	public List<String> findPlaces(InputExtraction paragraph) {
+	public List<Extraction> findPlaces(InputExtraction paragraph) {
 		Span names[] = null;
-		Set<String> places = new HashSet<String>();
+		Set<Extraction> places = new HashSet<Extraction>();
 
 			String[] st = paragraph.text.split("\\s");
 			names = locationDetector.find(st);
@@ -115,15 +117,17 @@ public class OpenNLPExtraction {
 			String[] namesStr = Span.spansToStrings(names, st);
 
 			for (String str : namesStr) {
-				places.add(str);
+				Extraction e = new Extraction();
+				e.setExtraction(str);
+				places.add(e);
 			}
 
-		return new ArrayList<String>(places);
+		return new ArrayList<Extraction>(places);
 	}
 	
-	public List<String> findDates(InputExtraction paragraph) {
+	public List<Extraction> findDates(InputExtraction paragraph) {
 		Span names[] = null;
-		Set<String> dates = new HashSet<String>();
+		Set<Extraction> dates = new HashSet<Extraction>();
 
 			String[] st = paragraph.text.split("\\s");
 			names = dateDetector.find(st);
@@ -131,11 +135,13 @@ public class OpenNLPExtraction {
 			String[] namesStr = Span.spansToStrings(names, st);
 
 			for (String str : namesStr) {
-				dates.add(str);
+				Extraction e = new Extraction();
+				e.setExtraction(str);
+				dates.add(e);
 			}
 
 
-		return new ArrayList<String>(dates);
+		return new ArrayList<Extraction>(dates);
 	}
 
 }
