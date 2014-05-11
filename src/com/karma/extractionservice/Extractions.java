@@ -3,31 +3,31 @@ package com.karma.extractionservice;
 import java.util.List;
 
 public class Extractions {
-	List<String> people;
-	List<String> places;
-	List<String> dates;
+	List<Extraction> people;
+	List<Extraction> places;
+	List<Extraction>dates;
 	
-	public void setPeople(List<String> ext) {
+	public void setPeople(List<Extraction>ext) {
 		this.people = ext;
 	}
 	
-	public List<String> getPeople() {
+	public List<Extraction> getPeople() {
 		return this.people;
 	}
 	
-	public void setPlaces(List<String> ext) {
+	public void setPlaces(List<Extraction> ext) {
 		this.places = ext;
 	}
 
-	public List<String> getPlaces() {
+	public List<Extraction> getPlaces() {
 		return this.places;
 	}
 	
-	public void setDates(List<String> ext) {
+	public void setDates(List<Extraction> ext) {
 		this.dates = ext;
 	}
 
-	public List<String> getDates() {
+	public List<Extraction> getDates() {
 		return this.dates;
 	}
 
