@@ -98,18 +98,18 @@ Deploy the application to Tomcat and start the server from Eclipse. The applicat
 ## Demo  
   
 Below is a screenshot of Karma with an input file (.xlsx) with Biography of 3 famous personalities-  
-  ![Karma](/http://i60.tinypic.com/aokh0j.png)  
+  ![Karma](http://i60.tinypic.com/aokh0j.png)  
   
 Clicking on _'Extract Entities'_ will open a pop-up where you need to enter the URL for Extraction service. Here, we use the Stanford NER service running on our `http://karmanlp.isi.edu:8080` server. The URLs for Stanford is-  
 > http://karmanlp.isi.edu:8080/ExtractionService/StanfordCoreNLP  
   
 Screenshot below-  
-![Pop-up for Extraction service URL](/http://i57.tinypic.com/sgpdw6.png)  
+![Pop-up for Extraction service URL](http://i57.tinypic.com/sgpdw6.png)  
   
 Next, Karma will send a `GET` request behind the scenes to `/getCapabilities` sub-path as described previously and displays a selection box where you can select the entities to extract-  
-![](/http://i59.tinypic.com/ns6l0.png)  
+![Capabilities of Extraction service](http://i59.tinypic.com/ns6l0.png)  
   
 After you make the selections, Karma adds another column with selected extractions in the worksheet as shown below (here, the selections made were People, Places and Dates)-  
-![](/http://i57.tinypic.com/2le5aq9.png)  
+![Extracted entities](http://i57.tinypic.com/2le5aq9.png)  
 
 
