@@ -1,8 +1,5 @@
 package com.karma.extractionservice;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -36,7 +33,7 @@ public class StanfordCoreNLPService {
 		return new StanfordNLPExtraction().performExtraction(input);
 
 	}
-
+	
 	@GET
 	@Path("/getCapabilities")
 	@Produces({ "application/json" })

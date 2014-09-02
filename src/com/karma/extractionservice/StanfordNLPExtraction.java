@@ -1,7 +1,5 @@
 package com.karma.extractionservice;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,16 +9,13 @@ import java.util.regex.Pattern;
 
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
-import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 
 public class StanfordNLPExtraction {
 
 	public List<OutputExtraction> performExtraction(List<InputExtraction> input) {
 
-		//Need to give a local path on disk. Might break if the app folder is moved.
-		//String serializedClassifier = "H:/Trojan/Tomcat7/wtpwebapps/ExtractionService/classifiers/english.muc.7class.distsim.crf.ser.gz";
-		String serializedClassifier = "/home/vishal/apache-tomcat-7.0.53/webapps/ExtractionService/classifiers/english.muc.7class.distsim.crf.ser.gz";
+		String serializedClassifier = "english.muc.7class.distsim.crf.ser.gz";
 		
 		AbstractSequenceClassifier<CoreLabel> classifier = CRFClassifier
 				.getClassifierNoExceptions(serializedClassifier);
@@ -83,5 +78,18 @@ public class StanfordNLPExtraction {
 		}
 
 		return output;
+	}
+	
+	public static void main(String[] args) {
+		StanfordNLPExtraction extractor = new StanfordNLPExtraction();
+		ArrayList<InputExtraction> data = new ArrayList<InputExtraction>();
+		InputExtraction row = new InputExtraction();
+		row.setRowId("1");
+		row.setText("There was Peter Thomas in the train");
+		data.add(row);
+		List<OutputExtraction> out = extractor.performExtraction(data);
+		for(OutputExtraction output : out) {
+			System.out.println(output);
+		}
 	}
 }
