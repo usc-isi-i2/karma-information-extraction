@@ -1,4 +1,4 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction.openNLP;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -8,6 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import edu.isi.karma.services.entityExtraction.Extraction;
+import edu.isi.karma.services.entityExtraction.Extractions;
+import edu.isi.karma.services.entityExtraction.InputExtraction;
+import edu.isi.karma.services.entityExtraction.OutputExtraction;
 import opennlp.tools.namefind.NameFinderME;
 import opennlp.tools.namefind.TokenNameFinderModel;
 import opennlp.tools.util.InvalidFormatException;
@@ -91,7 +95,7 @@ public class OpenNLPExtraction {
 		Span names[] = null;
 		Set<Extraction> people = new HashSet<Extraction>();
 
-			String[] st = paragraph.text.split("\\s");
+			String[] st = paragraph.getText().split("\\s");
 			names = nameDetector.find(st);
 			
 			System.out.println("reached here");
@@ -111,7 +115,7 @@ public class OpenNLPExtraction {
 		Span names[] = null;
 		Set<Extraction> places = new HashSet<Extraction>();
 
-			String[] st = paragraph.text.split("\\s");
+			String[] st = paragraph.getText().split("\\s");
 			names = locationDetector.find(st);
 			
 			String[] namesStr = Span.spansToStrings(names, st);
@@ -129,7 +133,7 @@ public class OpenNLPExtraction {
 		Span names[] = null;
 		Set<Extraction> dates = new HashSet<Extraction>();
 
-			String[] st = paragraph.text.split("\\s");
+			String[] st = paragraph.getText().split("\\s");
 			names = dateDetector.find(st);
 			
 			String[] namesStr = Span.spansToStrings(names, st);

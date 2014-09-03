@@ -1,4 +1,4 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +8,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
+
+import edu.isi.karma.services.entityExtraction.standfordNLP.StanfordCoreNLPService;
 
 
 public class Service {

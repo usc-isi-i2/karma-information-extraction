@@ -1,4 +1,4 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction;
 
 public class InputExtraction {
 	String rowId, text;

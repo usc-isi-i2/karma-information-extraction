@@ -1,13 +1,14 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction.standfordNLP;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.isi.karma.services.entityExtraction.Extraction;
+import edu.isi.karma.services.entityExtraction.Extractions;
+import edu.isi.karma.services.entityExtraction.InputExtraction;
+import edu.isi.karma.services.entityExtraction.OutputExtraction;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
-import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 
 public class StanfordNLPExtraction_Less_Greater_Symbol_Logic {
@@ -21,7 +22,7 @@ public class StanfordNLPExtraction_Less_Greater_Symbol_Logic {
 
 		List<OutputExtraction> output = new ArrayList<OutputExtraction>();
 
-		String s1 = "Good afternoon Rajat Raina, how are you today?";
+//		String s1 = "Good afternoon Rajat Raina, how are you today?";
 		String s2 = "I go to school at Stanford University, which is located in California. March 17, 2013";
 		//System.out.println(classifier.classifyToString(s1));
 		System.out.println(classifier.classifyWithInlineXML(s2));

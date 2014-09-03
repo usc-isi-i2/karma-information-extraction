@@ -1,8 +1,5 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction.openNLP;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -16,6 +13,9 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import edu.isi.karma.services.entityExtraction.InputExtraction;
+import edu.isi.karma.services.entityExtraction.OutputExtraction;
 
 /**
  * Root resource (exposed at "Extract" path)

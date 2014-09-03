@@ -1,4 +1,4 @@
-package com.karma.extractionservice;
+package edu.isi.karma.services.entityExtraction.standfordNLP;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -7,6 +7,10 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import edu.isi.karma.services.entityExtraction.Extraction;
+import edu.isi.karma.services.entityExtraction.Extractions;
+import edu.isi.karma.services.entityExtraction.InputExtraction;
+import edu.isi.karma.services.entityExtraction.OutputExtraction;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreLabel;
