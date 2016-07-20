@@ -19,14 +19,12 @@ import opennlp.tools.util.Span;
 
 public class OpenNLPExtraction {
 	
-	// Loading person name detection model
 	NameFinderME nameDetector = null, locationDetector = null, dateDetector = null;
 		
 	InputStream modelIn = null;
 	TokenNameFinderModel personModel = null, locationModel = null, dateModel = null; 
 		
 	public List<OutputExtraction> performExtraction(List<InputExtraction> input) {
-		
 		try {
 			// Need to give a local path on disk. Might break if the app folder is moved.
 			InputStream modelIn = new FileInputStream("/home/vishal/apache-tomcat-7.0.53/webapps/ExtractionService/resources/en-ner-person.bin");
@@ -51,8 +49,6 @@ public class OpenNLPExtraction {
 			modelIn.close();
 			
 			dateDetector = new NameFinderME(dateModel);
-			
-			
 		} catch (InvalidFormatException e1) {
 			e1.printStackTrace();
 		} catch (IOException e1) {
@@ -129,8 +125,6 @@ public class OpenNLPExtraction {
 				dates.add(e);
 			}
 
-
 		return new ArrayList<Extraction>(dates);
 	}
-
 }

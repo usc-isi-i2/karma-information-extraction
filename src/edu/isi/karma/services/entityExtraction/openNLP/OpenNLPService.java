@@ -31,7 +31,6 @@ public class OpenNLPService implements IExtractionService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Override
 	public List<OutputExtraction> performExt(List<InputExtraction> input) {
-		
 		return new OpenNLPExtraction().performExtraction(input);
 	}
 	

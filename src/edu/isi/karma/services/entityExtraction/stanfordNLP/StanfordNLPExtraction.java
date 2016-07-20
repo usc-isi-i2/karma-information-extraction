@@ -16,7 +16,6 @@ import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreLabel;
 
 public class StanfordNLPExtraction {
-
 	public List<OutputExtraction> performExtraction(List<InputExtraction> input) {
 
 		String serializedClassifier = "english.muc.7class.distsim.crf.ser.gz";
