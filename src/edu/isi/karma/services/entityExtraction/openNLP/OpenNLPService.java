@@ -37,7 +37,7 @@ public class OpenNLPService implements IExtractionService {
 	
 	@GET
 	@Path("/getCapabilities")
-    @Produces({"application/json"})
+    	@Produces({"application/json"})
 	public Response getCapabilities() {
 		ResponseBuilder respBuild = null;
 
