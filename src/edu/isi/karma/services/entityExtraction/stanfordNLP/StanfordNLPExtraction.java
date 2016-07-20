@@ -1,4 +1,4 @@
-package edu.isi.karma.services.entityExtraction.standfordNLP;
+package edu.isi.karma.services.entityExtraction.stanfordNLP;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -35,7 +35,6 @@ public class StanfordNLPExtraction {
 			Set<Extraction> dates = new HashSet<Extraction>();
 			
 			String stanMarkedOutput = classifier.classifyWithInlineXML(paragraph.getText());
-			System.out.println(stanMarkedOutput);
 			
 			String peopleRegEx = "<PERSON>(.+?)</PERSON>";
 			Pattern p = Pattern.compile(peopleRegEx);
@@ -70,7 +69,6 @@ public class StanfordNLPExtraction {
 				dates.add(e1);
 			}
 			
-			
 			e.setPeople(new ArrayList<Extraction>(people));
 			e.setPlaces(new ArrayList<Extraction>(places));
 			e.setDates(new ArrayList<Extraction>(dates));
@@ -82,18 +80,5 @@ public class StanfordNLPExtraction {
 		}
 
 		return output;
-	}
-	
-	public static void main(String[] args) {
-		StanfordNLPExtraction extractor = new StanfordNLPExtraction();
-		ArrayList<InputExtraction> data = new ArrayList<InputExtraction>();
-		InputExtraction row = new InputExtraction();
-		row.setRowId("1");
-		row.setText("There was Peter Thomas in the train");
-		data.add(row);
-		List<OutputExtraction> out = extractor.performExtraction(data);
-		for(OutputExtraction output : out) {
-			System.out.println(output);
-		}
 	}
 }

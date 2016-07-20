@@ -9,37 +9,37 @@
   	<dependency>
          <groupId>com.sun.jersey</groupId>
          <artifactId>jersey-server</artifactId>
-         <version>1.8</version>
+         <version>1.19.1</version>
      </dependency>
      
      <dependency>
          <groupId>com.sun.jersey</groupId>
          <artifactId>jersey-client</artifactId>
-         <version>1.8</version>
+         <version>1.19.1</version>
      </dependency>
 	
 	<dependency>
 	  <groupId>org.apache.opennlp</groupId>
 	  <artifactId>opennlp-tools</artifactId>
-	  <version>1.5.3</version>
+	  <version>1.6.0</version>
 	</dependency>
 	
 	<dependency>
 	    <groupId>edu.stanford.nlp</groupId>
 	    <artifactId>stanford-corenlp</artifactId>
-	    <version>3.4</version>
+	    <version>3.6.0</version>
 	</dependency>
 
 	<dependency>
 		<groupId>org.json</groupId>
 		<artifactId>json</artifactId>
-		<version>20140107</version>
+		<version>20160212</version>
 	</dependency>
 
 	<dependency>
 		<groupId>com.google.code.gson</groupId>
 		<artifactId>gson</artifactId>
-		<version>1.7.1</version>
+		<version>2.7</version>
 	 </dependency>
 
   </dependencies>
@@ -106,10 +106,7 @@
 						<!-- this connector defaults to 1300 for some reason -->
 					</connector>
 				</connectors>
-
 			</configuration>
-
-
 		</plugin>
     </plugins>
   </build>

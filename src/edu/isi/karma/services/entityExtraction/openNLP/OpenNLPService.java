@@ -14,6 +14,7 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import edu.isi.karma.services.entityExtraction.IExtractionService;
 import edu.isi.karma.services.entityExtraction.InputExtraction;
 import edu.isi.karma.services.entityExtraction.OutputExtraction;
 
@@ -21,24 +22,21 @@ import edu.isi.karma.services.entityExtraction.OutputExtraction;
  * Root resource (exposed at "Extract" path)
  */
 @Path("OpenNLP")
-public class OpenNLPService {
-
-	//mvn clean compile exec:java
-	
+public class OpenNLPService implements IExtractionService {	
 	/**
 	 * @return String that will be returned as a text/plain response.
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	
+	@Override
 	public List<OutputExtraction> performExt(List<InputExtraction> input) {
 		
 		return new OpenNLPExtraction().performExtraction(input);
-		
 	}
 	
-	@GET @Path("/getCapabilities")
+	@GET
+	@Path("/getCapabilities")
     @Produces({"application/json"})
 	public Response getCapabilities() {
 		ResponseBuilder respBuild = null;
@@ -65,11 +63,10 @@ public class OpenNLPService {
 			respBuild.header("Access-Control-Allow-Origin", "*");
 		} catch (Exception e) {
 			e.printStackTrace();
+			respBuild = Response.status(500);
+			return respBuild.build();
 		}
+
 		return respBuild.build();
-	}
-
-
-	
-	
-	}
+	}	
+}
